@@ -79,4 +79,4 @@ async function retryWithPro(input, resultsArea) {
 window.saveToData = function() {
     const key = document.getElementById("adminKey").value;
     if (key === "admin123") alert("تم الحفظ!"); else alert("خطأ!");
-}
+                }
