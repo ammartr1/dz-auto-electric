@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DZ Auto Electric | خبير كهرباء السيارات</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fas fa-car-battery"></i>
+            <span>DZ Auto Electric</span>
+        </div>
+        <div class="nav-links">
+            <button onclick="switchTab('user')" class="nav-btn active" id="btn-user">بحث الأعطال</button>
+            <button onclick="switchTab('admin')" class="nav-btn" id="btn-admin">لوحة التحكم</button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <section id="user-section" class="tab-content active">
+            <div class="hero">
+                <h2>مساعدك الذكي في كهرباء السيارات بالجزائر</h2>
+                <p>اسأل عن أماكن الفيوزات، المخططات، أو حلول أعطال السكارنير</p>
+            </div>
+
+            <div class="search-container">
+                <div class="input-wrapper">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput" placeholder="مثال: أين فيوز مضخة الوقود في سامبول 2015؟">
+                </div>
+                <button onclick="askGemini()" id="searchBtn">
+                    <span id="btn-text">تحليل العطل</span>
+                    <i class="fas fa-bolt"></i>
+                </button>
+            </div>
+
+            <div id="resultsArea">
+                </div>
+        </section>
+
+        <section id="admin-section" class="tab-content">
+            <div class="admin-card">
+                <h3><i class="fas fa-user-shield"></i> لوحة التحكم الخاصة بك</h3>
+                <p>أضف بيانات جديدة لتطوير "عقل" النموذج الخاص بك</p>
+                
+                <div class="admin-form">
+                    <input type="password" id="adminKey" placeholder="كلمة مرور الإدارة">
+                    <input type="text" id="carModel" placeholder="الماركة والموديل (مثال: Fiat Tipo 2024)">
+                    <textarea id="carInfo" rows="5" placeholder="اكتب تفاصيل المخطط الكهربائي أو حل العطل هنا..."></textarea>
+                    <button onclick="saveToData()" class="save-btn">حفظ البيانات وتدريب النموذج</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
